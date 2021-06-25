@@ -9,7 +9,7 @@ jobs:
       steps:
         - run: 
             command: |
-              echo 'Hello World!'
+              pwd
               ls -ltr
 
 workflows:
