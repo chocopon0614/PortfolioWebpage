@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@2.0
+
+jobs:
+  deploy:
+      docker:
+        - image: circleci/python:3.6-jessie
+      working_directory: ~/
+      steps:
+        - aws-cli/install
+        - run: ls -ltr 
+
+workflows:
+  deploy:
+    jobs:
+      - deploy:
+            filters:
+                branches:
+                  only: master
