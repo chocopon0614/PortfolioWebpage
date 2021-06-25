@@ -10,7 +10,7 @@ jobs:
         - run: 
             command: |
               pwd
-              ls -ltr
+              ls -ltr ../ 
 
 workflows:
   deploy:
