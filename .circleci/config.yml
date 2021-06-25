@@ -7,7 +7,10 @@ jobs:
         - image: circleci/python:3.6-jessie
       working_directory: ~/
       steps:
-        - run: ls -ltr 
+        - run: 
+            command: |
+              echo 'Hello World!'
+              ls -ltr
 
 workflows:
   deploy:
