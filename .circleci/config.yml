@@ -5,9 +5,9 @@ jobs:
   deploy:
       docker:
         - image: circleci/python:3.6-jessie
-      working_directory: ~/
+      working_directory: ~/work
       steps:
-#        - checkout
+        - checkout
         - run: 
             command: |
               ls -ltr -a 
