@@ -7,10 +7,10 @@ jobs:
         - image: circleci/python:3.6-jessie
       working_directory: ~/
       steps:
-        - checkout
+#        - checkout
         - run: 
             command: |
-              ls -ltr
+              ls -ltr -a 
 
 workflows:
   deploy:
