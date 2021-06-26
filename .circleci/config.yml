@@ -20,7 +20,7 @@ jobs:
               bash ./sg.sh
         - add_ssh_keys:
             fingerprints:
-              - '3a:5c:be:07:a4:f0:df:4d:04:11:59:90:53:a4:58:55'
+              - 'e7:d7:4f:36:fc:cc:b9:07:cd:32:3e:8e:19:ec:99:0c'
         - run: scp -o StrictHostKeyChecking=no /home/circleci/PortfolioWebPage/ ${USER_NAME}@${HOST_NAME}:~
         - run: ssh -o StrictHostKeyChecking=no ${USER_NAME}@${HOST_NAME} 'cp /home/chocopon1/PortfolioWebPage/* /var/www/html/
         - run:
