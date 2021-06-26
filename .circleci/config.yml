@@ -16,7 +16,6 @@ jobs:
             command: |
               IP=`curl -s ifconfig.me`
               echo "#!/bin/bash" > ./sg.sh
-              echo "aws configure set region us-west-2" >> ./sg.sh
               echo "aws ec2 authorize-security-group-ingress --group-id sg-0fd3983023d3016d5 --protocol tcp --port 22 --cidr ${IP}/32" >> ./sg.sh
               bash ./sg.sh
         - add_ssh_keys:
@@ -29,7 +28,6 @@ jobs:
             command: |
               IP=`curl -s ifconfig.me`
               echo "#!/bin/bash" > ./sg.sh
-              echo "aws configure set region us-west-2" >> ./sg.sh
               echo "aws ec2 revoke-security-group-ingress --group-id sg-0fd3983023d3016d5 --protocol tcp --port 22 --cidr ${IP}/32" >> ./sg.sh
               bash ./sg.sh
 
