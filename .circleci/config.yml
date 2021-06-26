@@ -5,12 +5,11 @@ jobs:
   deploy:
       docker:
         - image: circleci/python:3.6-jessie
-      working_directory: ~/work
+      working_directory: ~/PortfolioWebPage
       steps:
         - checkout
-        - run: 
-            command: |
-              pwd
+        - run: cd ..
+        - run: ls ltr -a 
 
 workflows:
   deploy:
