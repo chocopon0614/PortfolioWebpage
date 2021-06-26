@@ -21,12 +21,12 @@ jobs:
         - add_ssh_keys:
             fingerprints:
               - '3a:5c:be:07:a4:f0:df:4d:04:11:59:90:53:a4:58:55'
-        - run: ssh -o StrictHostKeyChecking=no ${USER_NAME}@${HOST_NAME} 'mkdir /home/chocopon1/PortfolioWebPage
-        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage/assets ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
-        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage/css ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
-        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage/js ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
-        - run: scp -o StrictHostKeyChecking=no /home/circleci/PortfolioWebPage/index.html ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
-#        - run: ssh -o StrictHostKeyChecking=no ${USER_NAME}@${HOST_NAME} 'cp /home/chocopon1/PortfolioWebPage/* /var/www/html/
+#        - run: ssh -o StrictHostKeyChecking=no ${USER_NAME}@${HOST_NAME} 'mkdir /home/chocopon1/PortfolioWebPage'
+#        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage/assets ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
+#        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage/css ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
+#        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage/js ${USER_NAME}@${HOST_NAME}:~/PortfolioWebPage
+        - run: scp -o StrictHostKeyChecking=no -r /home/circleci/PortfolioWebPage ${USER_NAME}@${HOST_NAME}:~
+        - run: ssh -o StrictHostKeyChecking=no ${USER_NAME}@${HOST_NAME} 'cp /home/chocopon1/PortfolioWebPage/* /var/www/html/'
         - run:
             name: "revoke-security-group-ingress"
             command: |
