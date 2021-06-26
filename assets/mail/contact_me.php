@@ -11,8 +11,8 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 
 // Create the email and send the message
 $subject = "\"Website Contact Form: \"".$name;
-$body = "\"You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nMessage:\n$message\"";
+$body = "\"You sent a message from Atsushi's portfolio website contact form. Please wait for contact\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nMessage:\n$message\"";
 
-$cmd = "echo ".$body." | mail -s ".$subject." -b norwayforest3345@gmail.com"." ".$email;
-exec($cmd, $opt);
+$cmd = "export LC_CTYPE=ja_JP.UTF-8;echo ".$body." | mail -s ".$subject." -b norwayforest3345@gmail.com"." ".$email;
+exec($cmd);
 ?>
